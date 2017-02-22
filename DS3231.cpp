@@ -952,7 +952,7 @@ uint8_t DS3231::dec2bcd(uint8_t dec)
     return ((dec / 10) * 16) + (dec % 10);
 }
 
-char *DS3231::strDayOfWeek(uint8_t dayOfWeek)
+const char *DS3231::strDayOfWeek(uint8_t dayOfWeek)
 {
     switch (dayOfWeek) {
         case 1:
@@ -981,7 +981,7 @@ char *DS3231::strDayOfWeek(uint8_t dayOfWeek)
     }
 }
 
-char *DS3231::strMonth(uint8_t month)
+const char *DS3231::strMonth(uint8_t month)
 {
     switch (month) {
         case 1:
@@ -1025,7 +1025,7 @@ char *DS3231::strMonth(uint8_t month)
     }
 }
 
-char *DS3231::strAmPm(uint8_t hour, bool uppercase)
+const char *DS3231::strAmPm(uint8_t hour, bool uppercase)
 {
     if (hour < 12)
     {
@@ -1048,7 +1048,7 @@ char *DS3231::strAmPm(uint8_t hour, bool uppercase)
     }
 }
 
-char *DS3231::strDaySufix(uint8_t day)
+const char *DS3231::strDaySufix(uint8_t day)
 {
     if (day % 10 == 1)
     {
@@ -1202,7 +1202,7 @@ uint8_t DS3231::readRegister8(uint8_t reg)
         value = Wire.read();
     #else
         value = Wire.receive();
-    #endif;
+    #endif
     Wire.endTransmission();
 
     return value;
