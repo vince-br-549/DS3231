@@ -14,9 +14,9 @@ RTCDateTime dt;
 
 void setup()
 {
-  Serial.begin(9600);
-  
-  // Initialize DS3231
+  Serial.begin(115200);
+  Serial.println();
+
   Serial.println("Initialize DS3231");;
   clock.begin();
 
