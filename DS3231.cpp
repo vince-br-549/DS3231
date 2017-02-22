@@ -1,6 +1,5 @@
 /*
 DS3231.cpp - Class file for the DS3231 Real-Time Clock
-
 Version: 1.0.1
 (c) 2014 Korneliusz Jarzebski
 www.jarzebski.pl
@@ -170,7 +169,7 @@ void DS3231::setDateTime(const char* date, const char* time)
 
 char* DS3231::dateFormat(const char* dateFormat, RTCDateTime dt)
 {
-    static char buffer[255];
+    char buffer[255];
 
     buffer[0] = 0;
 
@@ -298,7 +297,7 @@ char* DS3231::dateFormat(const char* dateFormat, RTCDateTime dt)
 
 char* DS3231::dateFormat(const char* dateFormat, RTCAlarmTime dt)
 {
-    static char buffer[255];
+    char buffer[255];
 
     buffer[0] = 0;
 
